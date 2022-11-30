@@ -1,16 +1,17 @@
 import { z } from "zod";
-import  Express  from "express";
+import  express  from "express";
 import { connectDB } from "./config/db";
-import validate from "./middleware/valdait";
-const app= Express();
+import userrout from "./router/userrout"
+import studentRout from "./router/student.rout"
+const app= express();
 
 connectDB();
+app.use (express.json())
 const port= 3360
 
-app.use("/auth")
-app.use("studentmanage")
+app.use("/auth",userrout)
+app.use("/studentmanage",studentRout)
 
-app.use (Express.json())
 
 app.listen(port, () => {
 

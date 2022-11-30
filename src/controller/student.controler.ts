@@ -7,9 +7,11 @@ import { prisma } from "../config/db";
 
 export const  gelallstudent = async(req:Request,res:Response)=>
     {
-    const getsudent =prisma.student.findMany()
-    return res.json(getsudent)
+    const getsudent =await prisma.student.findMany()
+    return res.status(200).json(getsudent)
 }
+
+
  export const addnewstdent = async(req:Request,res:Request)=>{
     let newbook= req.body as student
     

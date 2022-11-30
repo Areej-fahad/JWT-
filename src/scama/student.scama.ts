@@ -16,6 +16,15 @@ export const studentscama=z.object({
 
         })
     })
+
+    export const classscamaId=z.object({
+        params:z.object({
+        id : z.string({required_error: "id is required"}),
+
+        })
+    })
+
+
     export const teacherscama=z.object({
         body:z.object({
         id : z.string({required_error: "id is required"}),
