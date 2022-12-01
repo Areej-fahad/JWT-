@@ -27,7 +27,7 @@ if(!ispassvalid){
 }
 
 const token = jwt.sign(
-    { id: user.id, role: user.role },
+    { id: isuser?.id, role: isuser.role},
     process.env.JWT_SECERT as string
   );
 
